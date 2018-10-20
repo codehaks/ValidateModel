@@ -34,7 +34,6 @@ namespace WebApp.Controllers
         //    }            
         //}
 
-
         [HttpPost]
         [ValidateModel]
         public IActionResult Create(Movie model)
