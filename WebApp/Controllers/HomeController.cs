@@ -20,18 +20,27 @@ namespace WebApp.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //public IActionResult Create(Movie model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        // Save changes
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    else
+        //    {
+        //        return View(model);
+        //    }            
+        //}
+
 
         [HttpPost]
+        [ValidateModel]
         public IActionResult Create(Movie model)
         {
-            if (ModelState.IsValid)
-            {
-                return Ok("Valid");
-            }
-            else
-            {
-                return View(nameof(Create), model);
-            }
+            // Save changes
+            return RedirectToAction(nameof(Index));
         }
 
     }
